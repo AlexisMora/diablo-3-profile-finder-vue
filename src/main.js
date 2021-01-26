@@ -11,6 +11,7 @@ new Vue({
   methods: {
     init () {
       console.log('Hola uwu')
+      store.dispatch('oauth/getToken', null, { root: true })
     }
   },
   created () {
