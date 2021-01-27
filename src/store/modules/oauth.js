@@ -26,6 +26,7 @@ export default {
           console.log('Error oAuth: ', error)
         })
         .finally(() => {
+          console.log('DONE!')
           commit('loading/SET_LOADING', false, { root: true })
         })
     }

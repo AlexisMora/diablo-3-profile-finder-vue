@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
-    <LoadLayout v-if="isLoading">
-      <BaseLoading/>
-    </LoadLayout>
-    <MainLayout v-else>
-  </div>
+<v-app>
+      <LoadLayout v-if="isLoading">
+        <BaseLoading/>
+      </LoadLayout>
+    <MainLayout v-else/>
+</v-app>
 </template>
 <script>
 import { mapState } from 'vuex'
@@ -36,3 +36,4 @@ export default {
     -moz-osx-font-smoothing grayscale
     color #E9B06B
     background-color #190A09
+</style>

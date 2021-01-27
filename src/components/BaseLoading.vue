@@ -1,18 +1,15 @@
 <template>
-    <div class="text-center py-5">
-        <div class="spinner-wrapper w-100">
-            <v-progress-circular indeterminate
-                color="red"
-                class="spinner"
-            >
-
-            </v-progress-circular>
-        </div>
+    <div class="text-center">
+    <v-progress-circular indeterminate color="red">
+    </v-progress-circular>
+    <h1>Loading...</h1>
     </div>
 </template>
+<script>
+export default {
+  name: 'Loading'
+}
+</script>
 <style lang="stylus">
-    .spinner-wrapper
-        .spinner
-            width 4rem
-            height 4rem
+
 </style>
