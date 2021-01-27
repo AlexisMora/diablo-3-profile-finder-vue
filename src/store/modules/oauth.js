@@ -15,6 +15,8 @@ export default {
     // getToken function receives `context` object as parameter
     // thanks to Javascript's destructuring, we can get `commit` as argument
     async getToken ({ commit }) {
+      commit('loading/SET_LOADING', true, { root: true })
+
       oauth.getToken()
         .then(({ data }) => {
           commit('SET_ACCESS_TOKEN', data.access_token)
@@ -24,7 +26,7 @@ export default {
           console.log('Error oAuth: ', error)
         })
         .finally(() => {
-          console.log('Done!')
+          commit('loading/SET_LOADING', false, { root: true })
         })
     }
 
