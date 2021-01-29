@@ -1,17 +1,21 @@
+
 <template>
-  <v-footer padless class="mt-5">
-    <v-col class="text-center" cols="12">
-      <PoweredByFoot :icons="icons" />
-      <hr class="my-5" />
-      <div class="row">
-        <div class="col-sm-6 mb-sm-0 mb-5">
-          <FootLinks />
-        </div>
-        <div class="col-sm-6">
-          <MadeByFoot />
-        </div>
-      </div>
+  <v-footer
+   color="#252525"
+    padless
+  >
+  <v-row justify="center" no-gutters>
+    <PoweredByFoot :icons="icons"/>
+  </v-row>
+        <hr class="my-5">
+  <v-row>
+    <v-col cols="6" class="mb-sm-0 mb-5">
+      <FootLinks/>
     </v-col>
+    <v-col cols="6">
+      <MadeByFoot/>
+    </v-col>
+  </v-row>
   </v-footer>
 </template>
 <script>
@@ -36,8 +40,7 @@ export default {
         },
         {
           classes: ['fab', 'battle-net'],
-          href:
-            'https://develop.battle.net/documentation/diablo-3/community-apis'
+          href: 'https://develop.battle.net/documentation/diablo-3/community-apis'
         },
         {
           classes: ['fab', 'github'],
