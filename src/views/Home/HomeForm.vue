@@ -3,13 +3,14 @@
         <v-row>
             <v-col cols="12" md="8" offset-md="2">
                 <!--Form here -->
-                <v-form ref="form" v-model="valid" lazy-validation @submit.prevent="onSubmit" >
+                <v-form ref="form" v-model="valid" lazy-validation >
                     <!-- Group 1 (text input) -->
                     <v-text-field
                         dark
                         v-model="form.battleTag"
                         label="Battletag"
                         placeholder="Alexisms26#2514"
+                        :rules="nameRules"
                         required>
                     </v-text-field>
 
@@ -21,6 +22,7 @@
                     :items="regions"
                     item-text="text"
                     label="Region"
+                    :rules="[v => !!v || 'Region is required']"
                     required>
                     </v-select>
                     <v-btn
@@ -44,7 +46,10 @@ export default {
       form: {
         battletag: '',
         region: 'eu'
-      }
+      },
+      nameRules: [
+        v => !!v || 'Name is required'
+      ]
     }
   },
   computed: {
@@ -53,8 +58,10 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
+    submit () {
+      if (!this.$refs.form.validate()) return false
       const { region, battleTag } = this.form
+      console.log(region, battleTag)
       this.$router.push({ name: 'Profile', params: { region, battleTag: battleTag.replace('#', '-') } })
     }
   }
