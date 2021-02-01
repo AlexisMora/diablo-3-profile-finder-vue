@@ -1,24 +1,48 @@
 <template>
   <div class="text-center ">
-    <p class="text-muted">Powered by</p>
-
-    <ul class="list-inline">
-      <li class="list-inline-item mx-2" v-for="(icon, idx) in icons" :key="idx">
-        <a :href="icon.href" target="_blank" :title="icon.href">
-          <font-awesome-icon :icon="icon.classes" class="fa-lg" :style="{'color': icon.color}"/>
-        </a>
-      </li>
-    </ul>
+        <v-card-text class="py-2 white--text text-center">
+          <span><strong> Powered By </strong></span>
+        </v-card-text>
+                <v-card-text class="py-2 white--text text-center">
+            <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-4"
+            dark
+            icon
+            :href="icon.link"
+          >
+            <v-icon size="24px">
+              {{ icon.icon }}
+            </v-icon>
+          </v-btn>
+        </v-card-text>
   </div>
 </template>
 
 <script>
 export default {
   name: 'PoweredByFoot',
-  props: {
-    icons: {
-      required: true,
-      type: Array
+  data () {
+    return {
+      icons: [
+        {
+          link: 'https://https://develop.battle.net/',
+          icon: 'mdi-battlenet'
+        },
+        {
+          link: 'https://https://vuejs.org/',
+          icon: 'mdi-vuejs'
+        },
+        {
+          link: 'https://https://vuetifyjs.com/en/',
+          icon: 'mdi-vuetify'
+        },
+        {
+          link: 'https://github.com',
+          icon: 'mdi-github'
+        }
+      ]
     }
   }
 }
