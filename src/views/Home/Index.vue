@@ -1,12 +1,18 @@
 <template>
   <div class="home">
-    <h1>Home Page</h1>
+    <HomeTitle/>
+    <HomeForm/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import HomeForm from './HomeForm'
+import HomeTitle from './HomeTitle'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    HomeTitle, HomeForm
+  }
 }
 </script>
