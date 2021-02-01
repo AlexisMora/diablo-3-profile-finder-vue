@@ -15,9 +15,11 @@
 
                     <!-- Group 2 (region selector) -->
                     <v-select
+                    id="input-region"
                     dark
                     v-model="form.region"
-                    :options="regions"
+                    :items="regions"
+                    item-text="text"
                     label="Region"
                     required>
                     </v-select>
