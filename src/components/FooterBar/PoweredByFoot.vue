@@ -27,15 +27,15 @@ export default {
     return {
       icons: [
         {
-          link: 'https://https://develop.battle.net/',
+          link: 'https://develop.battle.net/documentation/diablo-3',
           icon: 'mdi-battlenet'
         },
         {
-          link: 'https://https://vuejs.org/',
+          link: 'https://vuejs.org/',
           icon: 'mdi-vuejs'
         },
         {
-          link: 'https://https://vuetifyjs.com/en/',
+          link: 'https://vuetifyjs.com/en/',
           icon: 'mdi-vuetify'
         },
         {
